@@ -1,0 +1,13 @@
+#jwt:
+#  secret: 'hqbdCs9SCFNC5QNqVQrmzuGUJvRN89vmTIS7Bg9Oh8//CrqMKE6eeqxet6V2aU/aDyBG+sQN3ldnmAKNxkf2nQ=='
+#  expiration:
+#    ms: 5000
+spring:
+  datasource:
+    url: 'jdbc:mysql://localhost:3306/financenavigator'
+    username: 'saurabh'
+    password: '1234'
+    driver-class-name: 'com.mysql.jdbc.Driver'
+  jpa:
+    hibernate:
+      ddl-auto: update
