@@ -5,7 +5,7 @@
 spring:
   datasource:
     url: 'jdbc:mysql://localhost:3306/financenavigator'
-    username: 'saurabh'
+    username: 'tejal'
     password: '1234'
     driver-class-name: 'com.mysql.jdbc.Driver'
   jpa:
