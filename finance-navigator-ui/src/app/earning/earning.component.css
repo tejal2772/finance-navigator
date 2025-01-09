@@ -1,0 +1,61 @@
+.earning-container {
+  padding: 20px;
+}
+
+.earning-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.btn-create {
+  padding: 10px 20px;
+  background-color: #007aff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.earning-list-container {
+  max-height: 300px;
+  overflow: auto;
+}
+
+.earning-list {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.earning-list th {
+  font-weight: bold;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+}
+
+.earning-list td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Style for table buttons */
+.edit-btn,
+.delete-btn {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #007aff;
+  color: white;
+  margin-right: 10px;
+}
+
+.delete-btn {
+  background-color: #ff3b30;
+  color: white;
+}

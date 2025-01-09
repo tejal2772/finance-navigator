@@ -1,0 +1,30 @@
+  <div class="budget-actions">
+    <button class="btn-create" (click)="createBudget()">Create Budget</button>
+  </div>
+  <div class="budget-table-container">
+    <table class="budget-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Budget Amount</th>
+          <th>Used Amount</th>
+          <th>Used %    </th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let budget of data.budgets">
+          <td class="category-name">{{ budget.categoryName }}</td>
+          <td class="monthly-budget-amount">{{ budget.monthlyBudgetAmount | currency:'INR':'symbol'}}</td>
+          <td class="remaining-budget-amount">{{ budget.monthlyBudgetAmount-budget.remainingBudgetAmount | currency:'INR':'symbol'}}</td>
+          <td class="remaining-budget-percentage">
+            <div class="bar-container">
+              <div class="bar" [style.width.%]="((budget.monthlyBudgetAmount / budget.remainingBudgetAmount * 100)-100 ).toFixed(0)"></div>
+            </div>
+            <span>{{ ((budget.monthlyBudgetAmount / budget.remainingBudgetAmount * 100)-100 ).toFixed(0) }}%</span>
+          </td>
+          <td class="delete-budget" (click)="deleteBudget(budget.budgetId)"><button class="btn-delete">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

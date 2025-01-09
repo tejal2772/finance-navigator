@@ -1,0 +1,63 @@
+<div class="header">
+  <div class="title">Finance Navigator</div>
+</div>
+<div class="container">
+  <div class="sidebar">
+    <!-- <button (click)="toggleSidebar()" class="toggle-button">
+      <i class="fa fa-bars"></i>
+    </button> -->
+    <div class="nav-item" routerLink="/dashboard" routerLinkActive="active">
+      <i class="fa fa-home"
+        ><span style="font-family: Arial; font-size: 14px; margin-left: 10px"
+          >Home</span
+        ></i
+      >
+    </div>
+    <div class="nav-item" routerLink="/report" routerLinkActive="active">
+      <span style="opacity: 0">.</span>
+      <i class="fa fa-file"
+        ><span style="font-family: Arial; font-size: 14px; margin-left: 10px"
+          >Report</span
+        ></i
+      >
+    </div>
+    <div class="nav-item logout" (click)="logout()">
+      <i class="fa fa-sign-out">
+        <span style="font-family: Arial; font-size: 14px; margin-left: 10px"
+          >Logout</span
+        ></i
+      >
+    </div>
+  </div>
+  <div class="main">
+    <div class="main">
+      <div class="tiles-container">
+        <div class="tile welcome-tile">
+          <h1>Welcome, {{ username }}!</h1>
+
+          <p>Your current balance:</p>
+          <h2><i class="fas fa-rupee-sign"></i> {{ data.remainingBalance }}</h2>
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <div class="grid-item">
+          <h3>Earnings</h3>
+          <app-earning [data]="data"></app-earning>
+        </div>
+        <div class="grid-item">
+          <h3>Expenses</h3>
+          <app-expense [data]="data"></app-expense>
+        </div>
+        <div class="grid-item">
+          <h3>Budgets</h3>
+          <app-budget [data]="data"></app-budget>
+        </div>
+        <div class="grid-item">
+          <h3>Goals</h3>
+          <app-goal [data]="data"></app-goal>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

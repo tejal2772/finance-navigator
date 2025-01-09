@@ -1,0 +1,27 @@
+<div class="popup">
+    <h2 class="popup__header">Create New Monthly Budget</h2>
+    <form (submit)="onSubmit()" class="popup__form">
+      <label>
+        <span class="popup__label">Category</span>
+        <select [(ngModel)]="selectedCategory" name="category" class="popup__select">
+          <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+        </select>
+      </label>
+      <p *ngIf="!selectedCategory && submitted" class="warning-message">
+        Category is required
+      </p>
+      <label>
+        <span class="popup__label">Budget Amount</span>
+        <div class="popup__input-container">
+          <span class="popup__currency">₹</span>
+          <input [(ngModel)]="amount" name="budgetAmount" type="number" step="0.01" class="popup__input" required>
+        </div>
+      </label>
+      <p *ngIf="!amount && submitted" class="warning-message">
+        Amount is required
+      </p>
+      <button type="submit" class="popup__button popup__button--create">Create Budget</button>
+      <button type="button" class="popup__button popup__button--cancel" (click)="onCancelClick()">Cancel</button>
+    </form>
+  </div>
+ 

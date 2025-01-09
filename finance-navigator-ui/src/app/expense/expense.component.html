@@ -1,0 +1,29 @@
+<div class="earning-container">
+    <div class="earning-header">
+        <button class="btn-create" color="primary" (click)="openAddExpenseDialog()">Add New Expense</button>
+    </div>
+    <div class="earning-list-container">
+      <table class="earning-list">
+        <thead>
+          <tr>
+            <th>Expense Amount</th>
+            <th>Expense Category</th>
+            <th>Expense Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let expense of data.expenses">
+            <td>{{expense.expenseAmount | currency:'INR':'symbol'}}</td>
+            <td>{{expense.categoryName}}</td>
+            <td>{{expense.expenseDate}}</td>
+            <td>
+              <button class="edit-btn" (click)="openEditExpenseDialog(expense.expenseId, expense.expenseAmount, expense.expenseDate, expense.categoryName)">Edit</button>
+              <button class="delete-btn" (click)="deleteExpense(expense.expenseId)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

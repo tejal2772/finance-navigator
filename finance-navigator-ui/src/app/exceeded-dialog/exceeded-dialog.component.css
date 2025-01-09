@@ -1,0 +1,13 @@
+.custom-dialog-container {
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    position: inherit;
+  }
+  
+  @media (max-width: 600px) {
+    .custom-dialog-container {
+      width: calc(100vw - 32px);
+      height: calc(100vh - 32px);
+    }
+  }
+  

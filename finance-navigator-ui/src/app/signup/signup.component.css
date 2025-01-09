@@ -1,0 +1,96 @@
+router-outlet {
+    margin: 0;
+    padding: 0;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+  .background {
+    background: linear-gradient(to bottom right, #c8c1ba, #899b9e);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+    background-color: white;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: rgb(93, 71, 71);
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .form-group {
+    margin-bottom: 30px;
+  }
+  
+  label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  input.form-control {
+    background-color: #f5f5f5;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: none;
+    font-size: 1.1rem;
+    color: #444;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  input.form-control:focus {
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    outline: none;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    background-color: #766f6d;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .btn:hover {
+    background-color: #ada8a0;
+    cursor: pointer;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 10px;
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  .warning-message {
+    color: #f44336; /* red color */
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  

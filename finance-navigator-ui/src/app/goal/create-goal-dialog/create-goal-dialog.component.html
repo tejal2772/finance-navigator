@@ -1,0 +1,38 @@
+<div class="popup">
+
+    <h1 class="popup__header">Create New Goal</h1>
+      
+    <form (ngSubmit)="onSubmit()" class="popup__form">
+  
+
+        <div class="popup__input-container">
+            <label for="name" class="popup__label">Name:</label>
+            <span class="popup__input"></span>
+            <input type="name" [(ngModel)]="name" name="name" class="popup__input" id="name" aria-describedby="emailHelp" placeholder="Name of goal">
+          </div>
+          <p *ngIf="!name && submitted" class="warning-message">Goal Name is required</p>
+
+      <div class="popup__input-container">
+        <label for="amount" class="popup__label">Amount:</label>
+        <span class="popup__currency">₹</span>
+        <input type="amount" [(ngModel)]="amount" name="amount" class="popup__input" id="amount" aria-describedby="emailHelp" placeholder="Enter Expense Amount">
+      </div>
+  
+      <p *ngIf="!amount && submitted" class="warning-message">Amount is required</p>
+  
+      <div class="popup__input-container">
+        <label for="date" class="popup__label">Date:</label>
+        <input type="date" [(ngModel)]="date" name="date" class="popup__input popup__input--date" id="date" placeholder="Expense Date">
+      </div>
+  
+      <p *ngIf="!date && submitted" class="warning-message">Target Date is required</p>
+
+  
+        <button type="submit" class="popup__button popup__button--create">Create</button>
+        <button class="popup__button popup__button--cancel" (click)="onCancelClick()">Cancel</button>
+  
+  
+    </form>
+    
+  </div>
+  

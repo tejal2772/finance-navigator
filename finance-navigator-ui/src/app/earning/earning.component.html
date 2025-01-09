@@ -1,0 +1,29 @@
+<div class="earning-container">
+    <div class="earning-header">
+        <button class="btn-create" color="primary" (click)="openAddEarningDialog()">Add Earning</button>
+    </div>
+    <div class="earning-list-container">
+      <table class="earning-list">
+        <thead>
+          <tr>
+            <th>Earning ID</th>
+            <th>Earning Amount</th>
+            <th>Earning Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let earning of data.earnings">
+            <td>{{earning.earningsId}}</td>
+            <td>{{earning.earningsAmount | currency:'INR':'symbol'}}</td>
+            <td>{{earning.earningsDate}}</td>
+            <td>
+              <button class="edit-btn" (click)="openEditEarningDialog(earning.earningsId, earning.earningsAmount, earning.earningsDate)">Edit</button>
+              <button class="delete-btn" (click)="deleteEarning(earning.earningsId)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

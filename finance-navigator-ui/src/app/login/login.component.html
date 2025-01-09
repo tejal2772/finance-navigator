@@ -1,0 +1,35 @@
+<!-- login.component.html -->
+<!-- <form (ngSubmit)="onSubmit()">
+    <label>Username:</label>
+    <input type="username" [(ngModel)]="username" name="username">
+  
+    <label>Password:</label>
+    <input type="password" [(ngModel)]="password" name="password">
+  
+    <button type="submit">Login</button>
+  </form> -->
+
+ <!-- login.component.html -->
+<div class="background">
+  <div class="container">
+    <h1>Login to Fin-Nav</h1>
+    <form (ngSubmit)="onSubmit()" class="form">
+      <div class="form-group">
+        <label for="email">Username</label>
+        <input type="username" [(ngModel)]="username" name="username" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter username">
+        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your username with anyone else.</small> -->
+        <p *ngIf="!username && submitted" class="warning-message">Username is required</p>
+      </div>
+      <div class="form-group">  
+        <label for="password">Password</label>
+        <input type="password" [(ngModel)]="password" name="password" class="form-control" id="password" placeholder="Password">
+        <p *ngIf="!password && submitted" class="warning-message">Password is required</p>
+      </div>
+      <button type="submit" class="btn btn-primary">Login</button>
+      <p></p>
+      <span>Don't have account? </span><a routerLink="/signup"routerLinkActive="active">SignUp</a>
+    </form>
+    
+    <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+
+<div class="earning-header">
+    <button class="btn-create" color="primary" (click)="openCreateGoalDialog()">Create New Goal</button>
+</div>
+
+  
+<div class="container">
+    <mat-card *ngFor="let goal of data.goals" class="goal-card">
+      <mat-card-header>
+        <mat-card-title>{{goal.goalName}}</mat-card-title>
+        <button mat-icon-button (click)="deleteGoal(goal.goalName)">
+          <mat-icon>delete</mat-icon>
+        </button>
+
+        
+      </mat-card-header>
+      <mat-card-content>
+        <p class="goal-amount">{{goal.goalAmount | currency:'INR':'symbol'}}</p>
+        <p class="target-date">Target Date: {{goal.targetDate | date}}</p>
+        <p class="target-date">Amount to save each month: {{goal.perMonthAmount | currency:'INR':'symbol'}}</p>
+        <div class="progress-bar-container">
+          <mat-progress-bar
+            mode="determinate"
+            [value]="(goal.completedMonths / goal.durationMonths) * 100">
+          </mat-progress-bar>
+          <span class="progress-bar-label">{{ (goal.completedMonths / goal.durationMonths) * 100 }}%</span>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>

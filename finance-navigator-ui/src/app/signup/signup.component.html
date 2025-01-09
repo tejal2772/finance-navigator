@@ -1,0 +1,33 @@
+<!-- signup.component.html -->
+<!-- <form (ngSubmit)="onSubmit()">
+  <label>UserName:</label>
+  <input type="text" [(ngModel)]="username" name="username">
+
+  <label>Password:</label>
+  <input type="password" [(ngModel)]="password" name="password">
+
+  <button type="submit">Signup</button>
+</form> -->
+<div class="background">
+  <div class="container">
+    <h1>Signup to Fin-Nav</h1>
+    <form (ngSubmit)="onSubmit()" class="form">
+      <div class="form-group">
+        <label for="email">Username</label>
+        <input type="username" [(ngModel)]="username" name="username" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter username">
+        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your username with anyone else.</small> -->
+        <p *ngIf="!username && submitted" class="warning-message">Username is required</p>
+      </div>
+      <div class="form-group">  
+        <label for="password">Password</label>
+        <input type="password" [(ngModel)]="password" name="password" class="form-control" id="password" placeholder="Password">
+        <p *ngIf="!password && submitted" class="warning-message">Password is required</p>
+      </div>
+      <button type="submit" class="btn btn-primary">Signup</button>
+      <p></p>
+      <span>Already't have account? </span><a routerLink="/login"routerLinkActive="active">Login</a>
+    </form>
+    
+    <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+  </div>
+</div>

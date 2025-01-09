@@ -1,0 +1,38 @@
+<div class="popup">
+
+  <h1 class="popup__header">Add Expense</h1>
+    
+  <form (ngSubmit)="onSubmit()" class="popup__form">
+
+    <div class="popup__input-container">
+      <label for="amount" class="popup__label">Amount:</label>
+      <span class="popup__currency">₹</span>
+      <input type="amount" [(ngModel)]="amount" name="amount" class="popup__input" id="amount" aria-describedby="emailHelp" placeholder="Enter Expense Amount">
+    </div>
+
+    <p *ngIf="!amount && submitted" class="warning-message">Amount is required</p>
+
+    <div class="popup__input-container">
+      <label for="date" class="popup__label">Date:</label>
+      <input type="date" [(ngModel)]="date" name="date" class="popup__input popup__input--date" id="date" placeholder="Expense Date">
+    </div>
+
+    <p *ngIf="!date && submitted" class="warning-message">Date is required</p>
+
+    <div class="popup__input-container">
+      <label for="category" class="popup__label">Select Category:</label>
+      <select [(ngModel)]="selectedCategory" name="category" class="popup__select" id="category">
+        <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+      </select>
+    </div>
+
+    <p *ngIf="!selectedCategory && submitted" class="warning-message">Category is required</p>
+
+
+      <button type="submit" class="popup__button popup__button--create">Add</button>
+      <button class="popup__button popup__button--cancel" (click)="onCancelClick()">Cancel</button>
+
+
+  </form>
+  
+</div>
